@@ -1,9 +1,11 @@
+
+![alt text](image-1.png)
+
 📰 Fake News Classification using Machine Learning Models
+
 👥 Team Members
 Baggiyam Shanmugam
-
 Julien
-
 Piero
 
 Presentation: [Link to slides]
