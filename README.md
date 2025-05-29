@@ -1,91 +1,83 @@
-![alt text](image.png)
-
-
-
 📰 Fake News Classification using Machine Learning Models
+👥 Team Members
+Baggiyam Shanmugam
 
-:silhouettes: Team Members
-* Baggiyam Shanmugam
-* Julien
-* Piero
+Julien
 
-Presentation here: [Link to slides]()
+Piero
 
-📌  Intro
+Presentation: [Link to slides]
 
-This project explores the effectiveness of different machine learning models to classify fake vs real news articles. From traditional ML approaches to transformer-based models like BERT, we evaluate multiple strategies to identify which techniques work best for the task.
+📌 Introduction
+This project explores the effectiveness of various machine learning models to classify fake vs real news articles. From traditional ML approaches to transformer-based models like BERT, we evaluate multiple strategies to identify which techniques perform best on this task.
 
-## :open_file_folder: Dataset Summary
-* **Training Samples**: 34,151 news articles (lowercased, preprocessed)
-* **Test Samples**: 9,983 articles
-* **Classes**: Fake (0), Real (1)
-* **Class Distribution**: 51.5% fake, 48.5% real
-* **Average Text Length**: \~11.7 words per article
----
-## :brain: Models Implemented
-### 1. Logistic Regression (`logistic_regression_model.ipynb`)
-* **Pipeline**: Custom preprocessing (punctuation removal, tokenization, stopwords, stemming) + CountVectorizer
-* **Model**: Logistic Regression
-* **Strengths**: Simple, fast, and very effective baseline
-### 2. Multinomial Naive Bayes (`naive_bayes_model.ipynb`)
-* **Approach**: Bag-of-Words (BoW) with CountVectorizer
-* **Strengths**: Extremely lightweight and interpretable
-### 3. Random Forest (`random_forest_model.ipynb`)
-* **Approach**: Ensemble model using decision trees on vectorized text
-* **Strengths**: Good for feature importance, but may overfit on sparse data
-### 4. Linear Support Vector Classifier (Linear SVC) (`svm_model.ipynb`)
-* **Approach**: Linear classifier for high-dimensional space
-* **Strengths**: Strong margin-based separation
-### 5. XGBoost (`xgboost_model.ipynb`)
-* **Approach**: Gradient boosting framework
-* **Strengths**: Handles complex patterns with regularization control
-### 6. BERT (Simple and Fine-tuned) (`bert_simple.ipynb`, `bert_finetuned.ipynb`)
-* **Approach**: Transformer-based feature extraction and fine-tuning
-* **Strengths**: Best-in-class performance with pre-trained language understanding
----
-## :bar_chart: Model Performance Summary
-| Model                         | Accuracy  | Precision (macro) | Recall (macro) | F1-score (macro) |
-| ----------------------------- | --------- | ----------------- | -------------- | ---------------- |
-| **Logistic Regression**       | **94.7%** | **0.95**          | **0.95**       | **0.95**         |
-| Linear SVC                    | 92.3%     | 0.92              | 0.92           | 0.92             |
-| Random Forest                 | 89.8%     | 0.90              | 0.90           | 0.90             |
-| Multinomial Naive Bayes (BoW) | 92.8%     | 0.93              | 0.93           | 0.93             |
----
-## :magnifying_glass: Key Takeaways
-* **Logistic Regression** proved to be a robust baseline model with 94.7% accuracy.
-* **Naive Bayes** remains strong despite simplicity, making it great for quick benchmarks.
-* **Linear SVC** offers competitive accuracy and is effective in high-dimensional feature space.
-* **Random Forest** is less effective for sparse text features due to overfitting potential.
-* **XGBoost and BERT** models (evaluated separately) showed improvements with more compute but diminishing returns.
----
-## :brain: Technologies Used
-* **Python**: Core programming language
-* **scikit-learn**: ML models, pipelines, evaluation
-* **nltk/spacy**: Text preprocessing
-* **joblib**: Model persistence
-* **matplotlib/seaborn**: Visualization
----
-```
----
-## :file_folder: Repository Structure
-```
-├── [logistic_regression_model.ipynb]
-├── [Multinomial_Naive_Bayes.ipynb]
-├── [XGBoost.ipynb]
-├── [model_comparison.ipynb]
-├── [Bert_Model]
-├── bert_simple.ipynb
-├── bert_finetuned.ipynb
+📂 Dataset Summary
+Training Samples: 34,151 news articles (lowercased, preprocessed)
+
+Test Samples: 9,983 articles
+
+Classes: Fake (0), Real (1)
+
+Class Distribution: 51.5% fake, 48.5% real
+
+Average Text Length: ~11.7 words per article
+
+🧠 Models Implemented
+Model	Approach	Strengths
+Logistic Regression	Custom preprocessing + CountVectorizer + Logistic Regression	Simple, fast, and effective baseline
+Multinomial Naive Bayes	Bag-of-Words (BoW) with CountVectorizer	Lightweight and interpretable
+Random Forest	Ensemble of decision trees on vectorized text	Feature importance insights, risk of overfitting on sparse data
+Linear Support Vector Classifier (Linear SVC)	Linear classifier for high-dimensional text space	Strong margin-based separation
+XGBoost	Gradient boosting framework	Handles complex patterns with regularization
+BERT (Simple and Fine-tuned)	Transformer-based feature extraction and fine-tuning	State-of-the-art performance with contextual language understanding
+
+📊 Model Performance Summary
+Model	Accuracy	Precision (macro)	Recall (macro)	F1-score (macro)
+Logistic Regression	94.7%	0.95	0.95	0.95
+Linear SVC	92.3%	0.92	0.92	0.92
+Random Forest	89.8%	0.90	0.90	0.90
+Multinomial Naive Bayes	92.8%	0.93	0.93	0.93
+BERT (with embeddings)	95.5%	0.96	0.96	0.96
+
+
+🔎 Key Takeaways
+Logistic Regression remains a robust baseline model with 94.7% accuracy.
+
+Naive Bayes offers strong performance and fast execution, suitable for quick benchmarks.
+
+Linear SVC effectively handles high-dimensional text features.
+
+Random Forest shows lower performance due to overfitting on sparse data.
+
+XGBoost and BERT models provide improvements, with BERT achieving the best overall accuracy and balanced metrics thanks to its deep contextual understanding.
+
+🧰 Technologies Used
+Python: Core programming language
+
+scikit-learn: ML models, pipelines, and evaluation
+
+nltk/spacy: Text preprocessing
+
+joblib: Model persistence
+
+matplotlib/seaborn: Visualization
+
+📁 Repository Structure
+Copy
+Edit
+├── logistic_regression_model.ipynb
+├── Multinomial_Naive_Bayes.ipynb
+├── XGBoost.ipynb
+├── model_comparison.ipynb
+├── Bert_Model
+│   ├── bert_simple.ipynb
+│   └── bert_finetuned.ipynb
 ├── preprocess.py
 ├── dataset/
 │   ├── training_data_lowercase.csv
 │   ├── testing_data_lowercase_nolabels.csv
 │   └── validation_predictions.csv
 └── README.md
-```
----
-## :drawing_pin: Conclusion
-This project provides a comprehensive view of traditional vs. modern NLP modeling approaches. While Logestic Regression offers the highest accuracy, traditional models like Logistic Regression and Naive Bayes still offer excellent performance at a fraction of the compute cost.
 
-
-
+📍 Conclusion
+This project offers a comprehensive comparison between traditional and modern NLP modeling approaches for fake news classification. While BERT achieves the highest accuracy and provides deep contextual understanding, it comes with significantly higher computational costs and slower inference times. For practical applications where speed and resource efficiency are critical, Logistic Regression emerges as a strong alternative, delivering excellent accuracy close to BERT's performance but with much faster processing and simpler implementation. Thus, depending on the deployment constraints, one might prefer Logistic Regression or another traditional model as a reliable and efficient choice.
