@@ -25,6 +25,7 @@ title: The headline of the article
 Build an NLP classifier that can accurately predict whether a headline is fake or real. 
 
 🧹 Preprocessing Steps
+
 ✅ Text cleaning: Lowercasing, removing punctuation and special characters
 
 ✅ Tokenization & Lemmatization 
@@ -43,24 +44,15 @@ Build an NLP classifier that can accurately predict whether a headline is fake o
 ##### on this I need to check all the model or we can do it together:
 
 🔧 Modeling Approaches
-🔹 TF-IDF + Logistic Regression
-Baseline model using traditional NLP pipeline
+🔹 TF-IDF + Logistic Regression: Accuracy ~94%
 
-Lightweight and fast
+🔹 BERT + Logistic Regression: Accuracy ~97%
 
-Accuracy ~94%
+🔹 Multinomial_Naive_Bayes 0.9999
 
-🔹 BERT + Logistic Regression
-Used bert-base-uncased from HuggingFace
-
-Used [CLS] embedding to represent the headline
-
-Stronger performance on subtle linguistic cues
-
-Accuracy ~97%
 
 📊 Evaluation Metrics
-We used:
+
 
 Accuracy
 
@@ -77,7 +69,7 @@ BERT + Logistic Regression	0.97	0.96
 0.96
 
 🔮 Predictions
-We used our best model (BERT + Logistic Regression) to generate predictions on testing_data_lowercase_nolabels.csv, replacing all 2s with either 0 or 1.
+We used our best model (Naive Bayes) to generate predictions on testing_data_lowercase_nolabels.csv, replacing all 2s with either 0 or 1.
 
 🧾 Project Structure
 
