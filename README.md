@@ -1,39 +1,98 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+![alt text](image.png)
 
-# PROJECT | Natural Language Processing Challenge
 
-## Introduction
 
-Learning how to process text is a skill required for Data Scientists/AI Engineers. 
+📰 Natural Language Processing Project (Project 2)
 
-In this project, you will put these skills into practice to identify whether a news headline is real or fake news.
+Presentation here: [Link to slides]()
 
-## Project Overview
+📌  Intro
 
-In the file `dataset/data.csv`, you will find a dataset containing news articles with the following columns:
+For this project, our goal was to detect if a news title could be fake or real. We applied Natural Language Processing (NLP) techniques to classify short headlines based on their likelihood of being authentic or misleading.
 
-- **`label`**: 0 if the news is fake, 1 if the news is real.
-- **`title`**: The headline of the news article.
-- **`text`**: The full content of the article.
-- **`subject`**: The category or topic of the news.
-- **`date`**: The publication date of the article.
+🧠 Project Overview
+This binary classification task is based on a dataset that contains news headlines and a corresponding label:
 
-Your goal is to build a classifier that is able to distinguish between the two.
+label:
 
-Once you have a classifier built, then use it to predict the labels for `dataset/validation_data.csv`. Generate a new file
-where the label `2` has been replaced by `0` (fake) or `1` (real) according to your model. Please respect the original file format, 
-do not include extra columns, and respect the column separator. 
+0 → Fake news
 
-Please ensure to split the `data.csv` into **training** and **test** datasets before using it for model training or evaluation.
+1 → Real news
 
-## Guidance
+title: The headline of the article
 
-Like in a real life scenario, you are able to make your own choices and text treatment.
-Use the techniques you have learned and the common packages to process this data and classify the text.
+🧪 Objective
+Build an NLP classifier that can accurately predict whether a headline is fake or real. 
 
-## Deliverables
+🧹 Preprocessing Steps
+✅ Text cleaning: Lowercasing, removing punctuation and special characters
 
-1. **Python Code:** Provide well-documented Python code that conducts the analysis.
-2. **Predictions:** A csv file in the same format as `validation_data.csv` but with the predicted labels (0 or 1)
-3. **Accuracy estimation:** Provide the teacher with your estimation of how your model will perform.
-4. **Presentation:** You will present your model in a 10-minute presentation. Your teacher will provide further instructions.
+✅ Tokenization & Lemmatization 
+
+✅ Stopword Removal
+
+✅ Train/Test Split: 80% train / 20% test
+
+✅ TF-IDF vectorization for traditional ML models
+
+✅ BERT Tokenization for transformer-based models
+
+✅ Logistic Regression (and others..... )
+
+
+##### on this I need to check all the model or we can do it together:
+
+🔧 Modeling Approaches
+🔹 TF-IDF + Logistic Regression
+Baseline model using traditional NLP pipeline
+
+Lightweight and fast
+
+Accuracy ~94%
+
+🔹 BERT + Logistic Regression
+Used bert-base-uncased from HuggingFace
+
+Used [CLS] embedding to represent the headline
+
+Stronger performance on subtle linguistic cues
+
+Accuracy ~97%
+
+📊 Evaluation Metrics
+We used:
+
+Accuracy
+
+F1 Score
+
+Confusion Matrix
+
+ROC-AUC Curve
+
+Model	Accuracy	F1 Score
+TF-IDF + Logistic Regression	0.94	0.93
+BERT + Logistic Regression	0.97	0.96
+
+0.96
+
+🔮 Predictions
+We used our best model (BERT + Logistic Regression) to generate predictions on testing_data_lowercase_nolabels.csv, replacing all 2s with either 0 or 1.
+
+🧾 Project Structure
+
+🛠️ Requirements
+Package	Version
+
+scikit-learn	1.x
+pandas	1.x
+nltk	latest
+matplotlib	latest
+
+📈 Conclusion
+While transformer-based models like BERT demonstrated strong performance, we found that traditional models (e.g., TF-IDF + Logistic Regression) were more suitable for this task. Given the short length of the headlines and the structured nature of the dataset, classical approaches achieved high accuracy (~94%) with significantly faster training and inference times.
+
+For this reason, we preferred the traditional model for deployment — it offers a lightweight, efficient, and interpretable solution that still delivers excellent results in real-time through our web app.
+
+
+
