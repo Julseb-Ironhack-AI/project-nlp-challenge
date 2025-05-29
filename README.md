@@ -1,3 +1,7 @@
+![alt text](image.png)
+
+
+
 📰 Natural Language Processing Project (Project 2)
 
 Presentation here: [Link to slides]()
