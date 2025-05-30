@@ -34,12 +34,13 @@ XGBoost	Gradient boosting framework	Handles complex patterns with regularization
 BERT (Simple and Fine-tuned)	Transformer-based feature extraction and fine-tuning	State-of-the-art performance with contextual language understanding
 
 📊 Model Performance Summary
-Model	Accuracy	Precision (macro)	Recall (macro)	F1-score (macro)
-Logistic Regression	94.7%	0.95	0.95	0.95
-Linear SVC	92.3%	0.92	0.92	0.92
-Random Forest	89.8%	0.90	0.90	0.90
-Multinomial Naive Bayes	92.8%	0.93	0.93	0.93
-BERT (with embeddings)	95.5%	0.96	0.96	0.96
+| Model                      | Accuracy | Precision (macro) | Recall (macro) | F1-score (macro) |
+|----------------------------|----------|-------------------|----------------|------------------|
+| Logistic Regression        | 94.7%    | 0.95              | 0.95           | 0.95             |
+| Linear SVC                 | 92.3%    | 0.92              | 0.92           | 0.92             |
+| Random Forest              | 89.8%    | 0.90              | 0.90           | 0.90             |
+| Multinomial Naive Bayes    | 92.8%    | 0.93              | 0.93           | 0.93             |
+| BERT (with embeddings)     | 95.5%    | 0.96              | 0.96           | 0.96             |
 
 
 🔎 Key Takeaways
@@ -65,13 +66,13 @@ joblib: Model persistence
 matplotlib/seaborn: Visualization
 
 📁 Repository Structure
-Copy
-Edit
+```
+📁 project-nlp-challenge/
 ├── logistic_regression_model.ipynb
 ├── Multinomial_Naive_Bayes.ipynb
 ├── XGBoost.ipynb
 ├── model_comparison.ipynb
-├── Bert_Model
+├── Bert_Model/
 │   ├── bert_simple.ipynb
 │   └── bert_finetuned.ipynb
 ├── preprocess.py
@@ -80,6 +81,7 @@ Edit
 │   ├── testing_data_lowercase_nolabels.csv
 │   └── validation_predictions.csv
 └── README.md
+```
 
 📍 Conclusion
 This project offers a comprehensive comparison between traditional and modern NLP modeling approaches for fake news classification. While BERT achieves the highest accuracy and provides deep contextual understanding, it comes with significantly higher computational costs and slower inference times. For practical applications where speed and resource efficiency are critical, Logistic Regression emerges as a strong alternative, delivering excellent accuracy close to BERT's performance but with much faster processing and simpler implementation. Thus, depending on the deployment constraints, one might prefer Logistic Regression or another traditional model as a reliable and efficient choice.
