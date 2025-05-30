@@ -8,7 +8,7 @@ Baggiyam Shanmugam
 Julien
 Piero
 
-Presentation: [Link to slides]
+Presentation: [Link to slides](https://docs.google.com/presentation/d/1PcoSNUo8yo1IDhUA0wfVjs_MtlLuRPz6yTSJ8FhOTKw/edit?usp=sharing)
 
 📌 Introduction
 This project explores the effectiveness of various machine learning models to classify fake vs real news articles. From traditional ML approaches to transformer-based models like BERT, we evaluate multiple strategies to identify which techniques perform best on this task.
